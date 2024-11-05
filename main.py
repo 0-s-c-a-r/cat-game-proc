@@ -1,7 +1,9 @@
+import pprint
+import os
 cat_attributes = {
-    "intelligence": 0,
-    "energy": 0,
-    "weight": 0,
+    "intelligence": 20,
+    "energy": 50,
+    "weight": 30,
     # change the inital values above
 }
 
@@ -12,21 +14,30 @@ name = input("Enter name:")
 # ...
 
 # start the while loop
-while True:
-    # Finish the string below
-    option = input("What would you like to do? 1. Play with your cat 2. Train your cat 3. show stats")
-
+while cat_attributes["energy"]>0 and cat_attributes["intelligence"]>0 and cat_attributes["weight"]>0:
+    os.system('clear')
+    option = input("What would you like to do? 1. Play with your cat 2. Train your cat 3.  Feed it 4. Let it sleep 5. Show stats  \n")
+    pprint.pprint(cat_attributes)
     if option == '1':
-        # change the cat's attributes here
+        cat_attributes["energy"] += 10
+        cat_attributes["weight"] += -5
         pass
     elif option == '2':
+        cat_attributes["intelligence"] += 10
         pass
     # elif ...
-    else:
-        pass
+    elif option == '3':
+        cat_attributes["weight"] += 10
+        cat_attributes["energy"] += -5
+    elif option == '4':
+        cat_attributes["energy"] += 25
+        cat_attributes["intelligence"] += -10
 
-    # finish off the if statements below
-    if cat_attributes['energy'] < 0:
-        pass
-    # elif ...
+
+
+
+
+print(name, " is dead")
+
+
     
